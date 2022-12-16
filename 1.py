@@ -12,6 +12,12 @@ from email.utils import formataddr
 import smtplib
 import codecs
 import getpass
+import socks
+import socket
+
+socks.set_default_proxy(socks.HTTP , '52.3.95.147', 31112, True, "realraymondhoward","TrhPCTuELnd9E59Q_country-UnitedStates_session-5erokZTu")
+socks.wrapmodule(smtplib)
+socket.socket = socks.socksocket
 
 # Tip: To generate a plain-text version of the HTML file:
 # $ lynx -display_charset=utf-8 -width=1024 -dump htmlnewsletter.html > htmlnewsletter.txt
@@ -40,9 +46,11 @@ directory = './'
 to_addresses_file = directory + 'address_list.txt'
 print("Thanks", to_addresses_file)
 # The HTML version of the message body
-htmlcontent = directory + 'htmlVersionOfMessage.html'
+# htmlcontent = directory + 'htmlVersionOfMessage.html'
+htmlcontent = directory + 'Bee.html'
 # The text-only version of the message body
-textcontent = directory + 'plainTextVersionOfMessage.txt'
+# textcontent = directory + 'plainTextVersionOfMessage.txt'
+textcontent = directory + 'bee.txt'
 
 ########## NO USER-ENTERABLE DATA BELOW THIS LINE ###########
 
